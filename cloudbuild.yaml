@@ -6,7 +6,7 @@ steps:
     
     -   id: "Rodando teste unitário"
         name: "gcr.io/cloud-builders/go"
-        args: [go", "test"]
+        args: ["go", "test"]
 
     -   name: 'gcr.io/cloud-builders/docker'
         args: ['build', '--tag=gcr.io/$PROJECT_ID/desafio-ci', '.']
