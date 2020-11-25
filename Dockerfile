@@ -1,11 +1,5 @@
-#part one
-FROM golang:1.11 as builder
-
-WORKDIR /
-COPY . .
-RUN go build -o /go/bin .
-
 FROM scratch
-WORKDIR /app
-COPY --from=builder /go/bin /go/bin
-ENTRYPOINT ["/go/bin/main"]
+
+COPY gopath/bin/main /main
+
+ENTRYPOINT ["/main"]
