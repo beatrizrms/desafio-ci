@@ -2,7 +2,7 @@
 FROM golang:1.15-buster as builder
 
 WORKDIR /src
-COPY go.* ./
+COPY . .
 RUN go build -o .
 
 FROM scratch
