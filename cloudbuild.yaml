@@ -10,4 +10,7 @@ steps:
         args: ["test"]
         env: ['PROJECT_ROOT=src']
 
+    -   name: 'gcr.io/cloud-builders/docker'
+        args: ['build', '--tag=gcr.io/$PROJECT_ID/desafio-ci', '.']
+
 images: ['gcr.io/$PROJECT_ID/desafio-ci']
