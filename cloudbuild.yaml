@@ -7,7 +7,7 @@ steps:
     
     -   id: "Rodando teste unitário"
         name: "gcr.io/cloud-builders/go"
-        args: ["test", "main"]
+        args: ["test"]
         env: ['PROJECT_ROOT=src']
 
     -   name: 'gcr.io/cloud-builders/docker'
