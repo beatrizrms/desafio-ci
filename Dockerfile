@@ -7,5 +7,5 @@ RUN go build -o gopath/bin .
 
 FROM scratch
 WORKDIR /app
-COPY --from=builder /gopath/bin /gopath/bin/src
+COPY --from=builder /gopath/bin/src /gopath/bin
 ENTRYPOINT ["/go/bin/src/main"]
