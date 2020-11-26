@@ -1,11 +1,11 @@
 #part one
-FROM golang:1.11 as builder
+FROM golang:1.15-buster as builder
 
-WORKDIR /
-COPY . .
-RUN go build -o go/bin .
+WORKDIR /src
+COPY go.* ./
+RUN go build -o .
 
 FROM scratch
 WORKDIR /app
-COPY --from=builder /go/bin/src /go/bin
-ENTRYPOINT ["/go/bin/src/main"]
+COPY --from=builder /src /src
+ENTRYPOINT ["/src"]
